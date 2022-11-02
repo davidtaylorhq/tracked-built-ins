@@ -2,13 +2,15 @@ import typescript from 'rollup-plugin-ts';
 import { Addon } from '@embroider/addon-dev/rollup';
 import del from 'rollup-plugin-delete';
 import copy from 'rollup-plugin-copy';
+import { defineConfig } from 'rollup';
 
 const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist',
 });
 
-export default {
+export default defineConfig({
+  external: ['@glimmer/validator'],
   // This provides defaults that work well alongside `publicEntrypoints` below.
   // You can augment this if you need to.
   output: addon.output(),
@@ -60,4 +62,4 @@ export default {
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
   ],
-};
+});
