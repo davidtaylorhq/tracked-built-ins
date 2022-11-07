@@ -3,16 +3,51 @@ import { hbs } from 'ember-cli-htmlbars';
 import { TrackedObject } from '@ember-compat/tracked-built-ins';
 import { render, settled } from '@ember/test-helpers';
 import type { TestContext } from '@ember/test-helpers';
+// eslint-disable-next-line ember/no-computed-properties-in-native-classes
+import { computed } from '@ember/object';
 import { expectTypeOf } from 'expect-type';
 
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 import { reactivityTest } from '../helpers/reactivity';
 import { eachInReactivityTest } from '../helpers/collection-reactivity';
+import { context } from '../support/context';
 
 // The whole point here is that Object *is* the thing we are matching, ESLint!
 // eslint-disable-next-line @typescript-eslint/ban-types
 expectTypeOf<TrackedObject>().toMatchTypeOf<Object>();
+
+module('TrackedObject (classic interop)', (hooks) => {
+  setupRenderingTest(hooks);
+
+  class Person {
+    contact = new TrackedObject({ name: 'Dan' });
+
+    @computed('contact.name') get name() {
+      return this.contact.name;
+    }
+
+    update(name: string) {
+      this.contact.name = name;
+    }
+  }
+
+  test(
+    'setting a property of a TrackedObject invalidates computed properties that have a dependent key on that property',
+    context<{ person: Person }>(async (ctx, assert) => {
+      ctx.person = new Person();
+
+      await render(hbs`{{this.person.name}}`);
+
+      assert.dom().hasText('Dan');
+
+      ctx.person.update('Daniel');
+      await settled();
+
+      assert.dom().hasText('Daniel');
+    })
+  );
+});
 
 module('TrackedObject', function (hooks) {
   setupRenderingTest(hooks);

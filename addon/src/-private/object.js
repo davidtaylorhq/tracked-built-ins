@@ -4,59 +4,51 @@ import {
   setValue,
 } from 'ember-tracked-storage-polyfill';
 
+import { PropertyStorageMap } from './property-storage-map';
+import { cloneObjectWithAccessors } from './utils';
+
 export default class TrackedObject {
   static fromEntries(entries) {
     return new TrackedObject(Object.fromEntries(entries));
   }
 
   constructor(obj = {}) {
-    let proto = Object.getPrototypeOf(obj);
-    let descs = Object.getOwnPropertyDescriptors(obj);
-
-    let clone = Object.create(proto);
-
-    for (let prop in descs) {
-      Object.defineProperty(clone, prop, descs[prop]);
-    }
+    const clone = cloneObjectWithAccessors(obj);
 
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     let self = this;
 
-    return new Proxy(clone, {
+    let p = new Proxy(clone, {
       get(target, prop) {
-        self.#readStorageFor(prop);
-
+        self.#values.consume(prop);
         return target[prop];
       },
 
       has(target, prop) {
-        self.#readStorageFor(prop);
-
+        self.#values.consume(prop);
         return prop in target;
       },
 
       ownKeys(target) {
-        getValue(self.#collection);
-
+        getValue(self.#iteration);
         return Reflect.ownKeys(target);
       },
 
       set(target, prop, value) {
+        if (!(prop in target)) {
+          self.#dirtyKeys();
+        }
         target[prop] = value;
-
-        self.#dirtyStorageFor(prop);
-        self.#dirtyCollection();
-
+        self.#values.update(prop);
         return true;
       },
 
       deleteProperty(target, prop) {
         if (prop in target) {
           delete target[prop];
-          self.#dirtyStorageFor(prop);
-          self.#dirtyCollection();
+          self.#values.update(prop);
+          self.#dirtyKeys();
         }
-
         return true;
       },
 
@@ -64,32 +56,16 @@ export default class TrackedObject {
         return TrackedObject.prototype;
       },
     });
+
+    this.#values = new PropertyStorageMap(p);
+
+    return p;
   }
 
-  #storages = new Map();
+  #iteration = createStorage(null, () => false);
+  #values;
 
-  #collection = createStorage(null, () => false);
-
-  #readStorageFor(key) {
-    let storage = this.#storages.get(key);
-
-    if (storage === undefined) {
-      storage = createStorage(null, () => false);
-      this.#storages.set(key, storage);
-    }
-
-    getValue(storage);
-  }
-
-  #dirtyStorageFor(key) {
-    const storage = this.#storages.get(key);
-
-    if (storage) {
-      setValue(storage, null);
-    }
-  }
-
-  #dirtyCollection() {
-    setValue(this.#collection, null);
+  #dirtyKeys() {
+    setValue(this.#iteration, null);
   }
 }
