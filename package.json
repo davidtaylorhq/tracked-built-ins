@@ -2,7 +2,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/tracked-tools/tracked-built-ins.git"
+    "url": "https://github.com/ember-migration-utils/tracked-built-ins-compat.git"
   },
   "license": "MIT",
   "author": "Chris Hewell Garrett",

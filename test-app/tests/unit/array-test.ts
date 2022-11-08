@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { TrackedArray } from 'tracked-built-ins';
+import { TrackedArray } from '@ember-compat/tracked-built-ins';
 import { expectTypeOf } from 'expect-type';
 
 import { setupRenderingTest } from 'ember-qunit';

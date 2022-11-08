@@ -1,14 +1,14 @@
 {
-  "name": "tracked-built-ins",
-  "version": "2.0.1",
-  "description": "Tracked versions of JavaScript's built-in classes!",
+  "name": "@ember-compat/tracked-built-ins",
+  "version": "0.9.0",
+  "description": "Tracked versions of JavaScript's built-in classes! Based on the tracked-built-ins package, but with extra interop support for classic Ember",
   "keywords": [
     "ember-addon"
   ],
-  "homepage": "https://github.com/tracked-tools/tracked-built-ins",
+  "homepage": "https://github.com/ember-migration-utils/tracked-built-ins-compat",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tracked-tools/tracked-built-ins.git"
+    "url": "https://github.com/ember-migration-utils/tracked-built-ins-compat.git"
   },
   "license": "MIT",
   "author": "Chris Hewell Garrett",

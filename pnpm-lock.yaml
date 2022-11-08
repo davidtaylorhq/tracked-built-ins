@@ -73,6 +73,7 @@ importers:
 
   test-app:
     specifiers:
+      '@ember-compat/tracked-built-ins': workspace:*
       '@ember/optional-features': ^2.0.0
       '@ember/test-helpers': 2.8.1
       '@embroider/test-setup': ^1.8.3
@@ -119,10 +120,10 @@ importers:
       prettier: ^2.6.2
       qunit: ^2.19.1
       qunit-dom: ^2.0.0
-      tracked-built-ins: workspace:*
       typescript: ^4.8.4
       webpack: ^5.74.0
     devDependencies:
+      '@ember-compat/tracked-built-ins': link:../addon
       '@ember/optional-features': 2.0.0
       '@ember/test-helpers': 2.8.1_ember-source@4.4.3
       '@embroider/test-setup': 1.8.3
@@ -169,7 +170,6 @@ importers:
       prettier: 2.7.1
       qunit: 2.19.3
       qunit-dom: 2.0.0
-      tracked-built-ins: link:../addon
       typescript: 4.8.4
       webpack: 5.74.0
 
@@ -2378,7 +2378,7 @@ packages:
     resolution: {integrity: sha512-TrD47X7WQyAvXOCo003soMH6lc4X5+jg5sJ8r81Trk0I2AYVm/8Pn4YPRFECDl6TL/ceYiK3qSgeI8GnDlh7Cw==}
     dependencies:
       '@types/ember-resolver': 5.0.12_@babel+core@7.19.6
-      '@types/ember__object': 4.0.5_@babel+core@7.19.6
+      '@types/ember__object': 4.0.5
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color

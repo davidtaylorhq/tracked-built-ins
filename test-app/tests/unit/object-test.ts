@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { hbs } from 'ember-cli-htmlbars';
-import { TrackedObject } from 'tracked-built-ins';
+import { TrackedObject } from '@ember-compat/tracked-built-ins';
 import { render, settled } from '@ember/test-helpers';
 import type { TestContext } from '@ember/test-helpers';
 import { expectTypeOf } from 'expect-type';
