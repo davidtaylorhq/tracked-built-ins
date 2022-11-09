@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "2.0.1",
+  "version": "0.9.0",
   "private": true,
   "description": "Test app for @ember-compat/tracked-built-ins addon",
   "repository": "",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "2.8.1",
-    "@ember-compat/tracked-built-ins": "workspace:*",
+    "@ember-compat/tracked-built-ins": "0.9.0",
     "@embroider/test-setup": "^1.8.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
