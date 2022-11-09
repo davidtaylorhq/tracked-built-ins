@@ -6,5 +6,5 @@
  #### :house: Internal
  * [#1](https://github.com/ember-migration-utils/tracked-built-ins-compat/pull/1) Rename package for @ember-compat org ([@dgeb](https://github.com/dgeb))
 
- #### Committers: 2
+ #### Committers: 1
  - Dan Gebhardt ([@dgeb](https://github.com/dgeb))
