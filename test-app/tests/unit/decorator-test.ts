@@ -6,7 +6,7 @@ import {
   TrackedWeakMap,
   TrackedSet,
   TrackedWeakSet,
-} from 'tracked-built-ins';
+} from '@ember-compat/tracked-built-ins';
 
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

@@ -1,4 +1,10 @@
-tracked-built-ins [![GitHub Actions Build Status](https://github.com/tracked-tools/tracked-built-ins/workflows/CI/badge.svg)](https://github.com/tracked-tools/tracked-built-ins/actions/workflows/CI.yml?query=branch%3Amaster)
+@ember-compat/tracked-built-ins [![GitHub Actions Build Status](https://github.com/ember-migration-utils/tracked-built-ins/workflows/CI/badge.svg)](https://github.com/ember-migration-utils/tracked-built-ins/actions/workflows/CI.yml?query=branch%3Amain)
+==============================================================================
+
+This addon is based on the
+[tracked-built-ins](https://github.com/tracked-tools/tracked-built-ins) package.
+It has been extended to include extra interop support for classic Ember.
+
 ==============================================================================
 
 This addon provides tracked versions of JavaScript's built-ins:
@@ -11,7 +17,7 @@ import {
   TrackedSet,
   TrackedWeakMap,
   TrackedWeakSet,
-} from 'tracked-built-ins';
+} from '@ember-compat/tracked-built-ins';
 ```
 
 These classes have the same APIs as their native equivalents, but reading from
@@ -22,7 +28,7 @@ Also included is an enhanced version of the `@tracked` decorator, which
 automatically shallow-wraps the native versions of these classes:
 
 ```js
-import { tracked } from 'tracked-built-ins';
+import { tracked } from '@ember-compat/tracked-built-ins';
 
 class Foo {
   @tracked value = 123;

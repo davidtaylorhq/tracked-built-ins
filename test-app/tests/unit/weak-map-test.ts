@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { TrackedWeakMap } from 'tracked-built-ins';
+import { TrackedWeakMap } from '@ember-compat/tracked-built-ins';
 
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

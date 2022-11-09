@@ -2,7 +2,7 @@
   "name": "test-app",
   "version": "2.0.1",
   "private": true,
-  "description": "Test app for tracked-built-ins addon",
+  "description": "Test app for @ember-compat/tracked-built-ins addon",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "2.8.1",
+    "@ember-compat/tracked-built-ins": "workspace:*",
     "@embroider/test-setup": "^1.8.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
@@ -72,7 +73,6 @@
     "prettier": "^2.6.2",
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
-    "tracked-built-ins": "workspace:*",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0"
   },

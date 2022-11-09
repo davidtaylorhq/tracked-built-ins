@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { TrackedSet } from 'tracked-built-ins';
+import { TrackedSet } from '@ember-compat/tracked-built-ins';
 
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
