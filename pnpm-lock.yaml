@@ -75,7 +75,7 @@ importers:
 
   test-app:
     specifiers:
-      '@ember-compat/tracked-built-ins': workspace:*
+      '@ember-compat/tracked-built-ins': 0.9.0
       '@ember/optional-features': ^2.0.0
       '@ember/test-helpers': 2.8.1
       '@embroider/test-setup': ^1.8.3
@@ -2395,7 +2395,7 @@ packages:
     resolution: {integrity: sha512-TrD47X7WQyAvXOCo003soMH6lc4X5+jg5sJ8r81Trk0I2AYVm/8Pn4YPRFECDl6TL/ceYiK3qSgeI8GnDlh7Cw==}
     dependencies:
       '@types/ember-resolver': 5.0.12_@babel+core@7.19.6
-      '@types/ember__object': 4.0.5
+      '@types/ember__object': 4.0.5_@babel+core@7.19.6
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
