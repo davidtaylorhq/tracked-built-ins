@@ -1,4 +1,4 @@
-@ember-compat/tracked-built-ins [![GitHub Actions Build Status](https://github.com/ember-migration-utils/tracked-built-ins/workflows/CI/badge.svg)](https://github.com/ember-migration-utils/tracked-built-ins/actions/workflows/CI.yml?query=branch%3Amain)
+@ember-compat/tracked-built-ins [![GitHub Actions Build Status](https://github.com/ember-migration-utils/tracked-built-ins-compat/workflows/CI/badge.svg)](https://github.com/ember-migration-utils/tracked-built-ins-compat/actions/workflows/CI.yml?query=branch%3Amain)
 ==============================================================================
 
 This addon is based on the
