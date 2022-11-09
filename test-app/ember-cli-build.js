@@ -7,6 +7,11 @@ module.exports = function (defaults) {
     autoImport: {
       forbidEval: true,
       watchDependencies: ['tracked-built-ins'],
+      webpack: {
+        externals: {
+          '@glimmer/validator': 'commonjs @glimmer/validator',
+        },
+      },
     },
     // Add options here
   });
