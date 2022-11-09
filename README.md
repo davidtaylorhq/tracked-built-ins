@@ -1,11 +1,11 @@
 @ember-compat/tracked-built-ins [![GitHub Actions Build Status](https://github.com/ember-migration-utils/tracked-built-ins-compat/workflows/CI/badge.svg)](https://github.com/ember-migration-utils/tracked-built-ins-compat/actions/workflows/CI.yml?query=branch%3Amain)
 ==============================================================================
 
-This addon is based on the
-[tracked-built-ins](https://github.com/tracked-tools/tracked-built-ins) package.
+This Ember addon is based on the
+[tracked-built-ins](https://github.com/tracked-tools/tracked-built-ins) addon.
 It has been extended to include extra interop support for classic Ember.
 
-==============================================================================
+---
 
 This addon provides tracked versions of JavaScript's built-ins:
 
