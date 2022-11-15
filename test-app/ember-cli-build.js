@@ -6,7 +6,7 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     autoImport: {
       forbidEval: true,
-      watchDependencies: ['tracked-built-ins'],
+      watchDependencies: ['@ember-compat/tracked-built-ins'],
       webpack: {
         externals: {
           '@glimmer/validator': 'commonjs @glimmer/validator',
