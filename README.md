@@ -49,7 +49,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install tracked-built-ins
+ember install @ember-compat/tracked-built-ins
 ```
 
 Usage
