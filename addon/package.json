@@ -1,6 +1,6 @@
 {
   "name": "@ember-compat/tracked-built-ins",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Tracked versions of JavaScript's built-in classes! Based on the tracked-built-ins package, but with extra interop support for classic Ember",
   "keywords": [
     "ember-addon"
