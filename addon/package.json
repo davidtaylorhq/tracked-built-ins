@@ -85,6 +85,9 @@
     "main": "addon-main.js",
     "type": "addon",
     "version": 2,
-    "app-js": {}
+    "app-js": {},
+    "externals": [
+      "@glimmer/validator"
+    ]
   }
 }

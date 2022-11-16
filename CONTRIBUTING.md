@@ -8,8 +8,8 @@ workspace:
 
 ## Installation
 
-* `git clone https://github.com/tracked-tools/tracked-built-ins.git`
-* `cd tracked-built-ins`
+* `git clone https://github.com/ember-migration-utils/tracked-built-ins-compat.git`
+* `cd tracked-built-ins-compat`
 * `pnpm install`
 
 ## Linting

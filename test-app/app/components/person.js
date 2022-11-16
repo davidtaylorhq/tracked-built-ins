@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 // import { tracked } from '@glimmer/tracking';
-import { TrackedMap } from 'tracked-built-ins';
+import { TrackedMap } from '@ember-compat/tracked-built-ins';
 
 export default class Person extends Component {
   friends = new TrackedMap();

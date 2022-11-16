@@ -1,4 +1,4 @@
-import { consumeTag, tagFor, dirtyTagFor } from '@glimmer/validator';
+import { consumeProperty, dirtyProperty } from './validator-versions';
 
 export class PropertyStorageMap {
   readonly #object: object;
@@ -8,10 +8,10 @@ export class PropertyStorageMap {
   }
 
   consume(key: string | symbol) {
-    consumeTag(tagFor(this.#object, key as string | symbol));
+    consumeProperty(this.#object, key);
   }
 
   update(key: string | symbol) {
-    dirtyTagFor(this.#object, key as string | symbol);
+    dirtyProperty(this.#object, key);
   }
 }
