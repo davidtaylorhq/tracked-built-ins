@@ -6,8 +6,9 @@ This Ember addon is based on the
 It has been extended to include extra interop support for classic Ember.
 
 **Note:** If you are experiencing issues related to the `@glimmer/validator`
-dependency, verify that you're using either `embroider` or `ember-auto-import`
->= v2.4.3 in your host app to ensure that it is properly treated as an external.
+dependency, verify that you're using either `embroider` or 
+`ember-auto-import@2.4.3` (or higher) in your host app to ensure that it is 
+properly treated as an external.
 
 ---
 
