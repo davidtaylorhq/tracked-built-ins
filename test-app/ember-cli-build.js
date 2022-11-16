@@ -7,13 +7,7 @@ module.exports = function (defaults) {
     autoImport: {
       forbidEval: true,
       watchDependencies: ['@ember-compat/tracked-built-ins'],
-      webpack: {
-        externals: {
-          '@glimmer/validator': 'commonjs @glimmer/validator',
-        },
-      },
     },
-    // Add options here
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');
